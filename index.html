@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CETPRO SAN PEDRO DE APLAO - Portal Principal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.92)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between hero-bg">
+
+    <!-- Encabezado / Navegación -->
+    <header class="w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50 py-4 px-6 fixed top-0 z-50">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xl text-white shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide text-white">CETPRO SAN PEDRO DE APLAO</h1>
+                    <p class="text-xs text-blue-400 font-medium tracking-wider uppercase">Educación Técnica de Calidad</p>
+                </div>
+            </div>
+            <span class="text-xs bg-blue-500/10 border border-blue-500/30 text-blue-300 px-3 py-1 rounded-full flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Sistema de Asistencia Activo
+            </span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow flex items-center justify-center pt-32 pb-16 px-4">
+        <div class="max-w-4xl w-full text-center space-y-8">
+            
+            <!-- Bienvenida -->
+            <div class="space-y-4">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-blue-600/20 text-blue-300 text-sm font-semibold border border-blue-500/30">
+                    ¡Bienvenidos a Nuestra Institución!
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    CETPRO <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">SAN PEDRO DE APLAO</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-base text-slate-300 font-light">
+                    Portal de gestión académica. Selecciona una de las opciones principales a continuación para continuar.
+                </p>
+            </div>
+
+            <!-- Accesos Principales (Tres Botones Requeridos) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 max-w-3xl mx-auto">
+                
+                <!-- Botón 1: Registrar Estudiante -->
+                <a href="registro.html" class="group bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-blue-500 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center text-2xl transition-all duration-300 mb-4">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Registrar Estudiante</h3>
+                    <p class="text-xs text-slate-400">Inscripción e ingreso de alumnos</p>
+                    <div class="mt-4 text-xs font-medium text-blue-400 flex items-center gap-1 group-hover:underline">
+                        Ir a Registro <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </div>
+                </a>
+
+                <!-- Botón 2: Marcar Asistencia -->
+                <a href="asistencia.html" class="group bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center text-2xl transition-all duration-300 mb-4">
+                        <i class="fa-solid fa-clipboard-user"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Marcar Asistencia</h3>
+                    <p class="text-xs text-slate-400">Registro diario de entrada</p>
+                    <div class="mt-4 text-xs font-medium text-emerald-400 flex items-center gap-1 group-hover:underline">
+                        Marcar Ahora <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </div>
+                </a>
+
+                <!-- Botón 3: Ver Listado -->
+                <a href="listado.html" class="group bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-indigo-500 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-xl bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center text-2xl transition-all duration-300 mb-4">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Ver Listado</h3>
+                    <p class="text-xs text-slate-400">Consulta general de asistencias</p>
+                    <div class="mt-4 text-xs font-medium text-indigo-400 flex items-center gap-1 group-hover:underline">
+                        Ver Registros <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Identidad Institucional -->
+            <div class="p-6 bg-slate-800/50 border border-slate-700/60 rounded-2xl text-left max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye"></i> Misión Institucional
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Brindar formación técnica de calidad que contribuya al desarrollo socioeconómico y profesional en la región de Aplao.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-eye"></i> Visión Institucional
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Ser una institución líder reconocida por la excelencia educativa, valores e innovación tecnológica.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-slate-950 border-t border-slate-800 py-4 px-6 text-center text-xs text-slate-400">
+        <p>&copy; CETPRO SAN PEDRO DE APLAO - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

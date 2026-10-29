@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CETPRO SAN PEDRO DE APLAO - Registrar Estudiante</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Encabezado -->
+    <header class="w-full bg-slate-800 border-b border-slate-700 py-4 px-6">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/20">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="text-base font-bold text-white">CETPRO SAN PEDRO DE APLAO</h1>
+                    <p class="text-xs text-blue-400">Registro de Estudiantes</p>
+                </div>
+            </div>
+            <a href="index.html" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-2 rounded-lg flex items-center gap-2 transition">
+                <i class="fa-solid fa-house"></i> Volver al Inicio
+            </a>
+        </div>
+    </header>
+
+    <!-- Formulario de Registro -->
+    <main class="flex-grow flex items-center justify-center py-12 px-4">
+        <div class="max-w-xl w-full bg-slate-800 border border-slate-700 p-8 rounded-2xl shadow-2xl space-y-6">
+            
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mx-auto mb-2">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Registrar Estudiante</h2>
+                <p class="text-xs text-slate-400">Todos los campos son obligatorios.</p>
+            </div>
+
+            <!-- Caja de Mensajes -->
+            <div id="mensajeBox" class="hidden p-4 rounded-xl text-xs font-medium border"></div>
+
+            <form id="registroForm" class="space-y-4">
+                
+                <!-- DNI -->
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">DNI (8 dígitos) <span class="text-red-400">*</span></label>
+                    <input type="text" id="dni" maxlength="8" pattern="[0-9]{8}" placeholder="Ej. 73829102" required 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 tracking-wider font-mono">
+                </div>
+
+                <!-- Nombres y Apellidos -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Nombres <span class="text-red-400">*</span></label>
+                        <input type="text" id="nombres" placeholder="Nombres del alumno" required 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Apellidos <span class="text-red-400">*</span></label>
+                        <input type="text" id="apellidos" placeholder="Apellidos completos" required 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+                    </div>
+                </div>
+
+                <!-- Programa de Estudios -->
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Programa de Estudios <span class="text-red-400">*</span></label>
+                    <select id="programa" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+                        <option value="">-- Seleccionar Programa --</option>
+                        <option value="Informática">Informática</option>
+                        <option value="Peluquería y Barbería">Peluquería y Barbería</option>
+                        <option value="Corte y Ensamblaje">Corte y Ensamblaje</option>
+                    </select>
+                </div>
+
+                <!-- Celular -->
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Celular / Teléfono <span class="text-red-400">*</span></label>
+                    <input type="tel" id="celular" maxlength="9" pattern="[0-9]{9}" placeholder="Ej. 987654321" required 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 font-mono">
+                </div>
+
+                <!-- Botón de Envío -->
+                <button type="submit" id="btnSubmit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-3 rounded-lg text-sm transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar Registro
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-slate-950 border-t border-slate-800 py-4 px-6 text-center text-xs text-slate-400">
+        <p>&copy; CETPRO SAN PEDRO DE APLAO - Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Firebase SDK (v10 Modular) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, doc, getDoc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // CONEXIÓN A FIREBASE REAL
+        const firebaseConfig = {
+            apiKey: "AIzaSyAMAVmKSb8Tygvd3NycZMrBj86GN9h4-j4",
+            authDomain: "registro-personas-c5e48.firebaseapp.com",
+            projectId: "registro-personas-c5e48",
+            storageBucket: "registro-personas-c5e48.firebasestorage.app",
+            messagingSenderId: "129443873783",
+            appId: "1:129443873783:web:9d4575e9ea54ba208e24f2"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const form = document.getElementById('registroForm');
+        const mensajeBox = document.getElementById('mensajeBox');
+        const btnSubmit = document.getElementById('btnSubmit');
+
+        function mostrarMensaje(texto, tipo) {
+            mensajeBox.classList.remove('hidden', 'bg-red-500/10', 'border-red-500/30', 'text-red-400', 'bg-emerald-500/10', 'border-emerald-500/30', 'text-emerald-400');
+            if (tipo === 'error') {
+                mensajeBox.classList.add('bg-red-500/10', 'border-red-500/30', 'text-red-400');
+            } else {
+                mensajeBox.classList.add('bg-emerald-500/10', 'border-emerald-500/30', 'text-emerald-400');
+            }
+            mensajeBox.innerHTML = texto;
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const dni = document.getElementById('dni').value.trim();
+            const nombres = document.getElementById('nombres').value.trim();
+            const apellidos = document.getElementById('apellidos').value.trim();
+            const programa = document.getElementById('programa').value;
+            const celular = document.getElementById('celular').value.trim();
+
+            if (!/^\d{8}$/.test(dni)) {
+                mostrarMensaje('<i class="fa-solid fa-triangle-exclamation"></i> El DNI debe contener exactamente 8 dígitos numéricos.', 'error');
+                return;
+            }
+
+            if (!/^\d{9}$/.test(celular)) {
+                mostrarMensaje('<i class="fa-solid fa-triangle-exclamation"></i> El celular debe contener 9 dígitos numéricos.', 'error');
+                return;
+            }
+
+            try {
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Verificando DNI...';
+
+                // Validar duplicados por DNI
+                const estudianteRef = doc(db, "estudiantes", dni);
+                const estudianteSnap = await getDoc(estudianteRef);
+
+                if (estudianteSnap.exists()) {
+                    mostrarMensaje(`<i class="fa-solid fa-circle-xmark"></i> El DNI <strong>${dni}</strong> ya está registrado para: <strong>${estudianteSnap.data().nombres} ${estudianteSnap.data().apellidos}</strong>.`, 'error');
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Guardar Registro';
+                    return;
+                }
+
+                btnSubmit.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Guardando...';
+
+                // Guardar en Firestore
+                await setDoc(estudianteRef, {
+                    dni: dni,
+                    nombres: nombres,
+                    apellidos: apellidos,
+                    programa: programa,
+                    celular: celular,
+                    fechaRegistro: serverTimestamp()
+                });
+
+                mostrarMensaje('<i class="fa-solid fa-circle-check"></i> ¡Estudiante registrado correctamente!', 'exito');
+                form.reset();
+
+            } catch (error) {
+                console.error("Error Firestore:", error);
+                mostrarMensaje('<i class="fa-solid fa-circle-xmark"></i> Error al guardar los datos en Firebase.', 'error');
+            } finally {
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Guardar Registro';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CETPRO SAN PEDRO DE APLAO - Panel Administrador</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Encabezado Administrador -->
+    <header class="w-full bg-slate-800 border-b border-slate-700 py-4 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-lg text-white shadow-md shadow-indigo-500/20">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white">Panel Administrativo</h1>
+                    <p class="text-xs text-indigo-400">CETPRO SAN PEDRO DE APLAO</p>
+                </div>
+            </div>
+            <a href="index.html" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg flex items-center gap-2 transition">
+                <i class="fa-solid fa-house"></i> Ir al Inicio
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto w-full p-6 flex-grow space-y-6">
+        
+        <!-- Tarjetas de Estadísticas en Tiempo Real -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl flex items-center justify-between shadow-xl">
+                <div>
+                    <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Estudiantes Registrados</p>
+                    <h3 id="cntEstudiantes" class="text-3xl font-bold text-white mt-1">...</h3>
+                </div>
+                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl flex items-center justify-between shadow-xl">
+                <div>
+                    <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Total de Asistencias</p>
+                    <h3 id="cntAsistencias" class="text-3xl font-bold text-emerald-400 mt-1">...</h3>
+                </div>
+                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl flex items-center justify-between shadow-xl sm:col-span-2 lg:col-span-1">
+                <div>
+                    <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Estado Base de Datos</p>
+                    <h3 class="text-sm font-semibold text-emerald-400 mt-2 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span> Firebase Conectado
+                    </h3>
+                </div>
+                <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-xl flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botones de Gestión -->
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl">
+            <h2 class="text-base font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-indigo-400"></i> Accesos Directos
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="registro.html" class="p-4 bg-slate-900/70 hover:bg-slate-700/50 border border-slate-700 rounded-xl flex items-center gap-3 transition">
+                    <i class="fa-solid fa-user-plus text-blue-400 text-xl"></i>
+                    <div>
+                        <p class="text-sm font-medium text-white">Registrar Alumnos</p>
+                        <p class="text-xs text-slate-400">Nuevo ingreso a Firestore</p>
+                    </div>
+                </a>
+
+                <a href="asistencia.html" class="p-4 bg-slate-900/70 hover:bg-slate-700/50 border border-slate-700 rounded-xl flex items-center gap-3 transition">
+                    <i class="fa-solid fa-clipboard-user text-emerald-400 text-xl"></i>
+                    <div>
+                        <p class="text-sm font-medium text-white">Marcar Asistencias</p>
+                        <p class="text-xs text-slate-400">Control de asistencia diaria</p>
+                    </div>
+                </a>
+
+                <a href="listado.html" class="p-4 bg-slate-900/70 hover:bg-slate-700/50 border border-slate-700 rounded-xl flex items-center gap-3 transition">
+                    <i class="fa-solid fa-list-check text-indigo-400 text-xl"></i>
+                    <div>
+                        <p class="text-sm font-medium text-white">Ver Registros</p>
+                        <p class="text-xs text-slate-400">Lista y filtro de asistencias</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-slate-950 border-t border-slate-800 py-4 px-6 text-center text-xs text-slate-400">
+        <p>&copy; CETPRO SAN PEDRO DE APLAO - Módulo Administrativo</p>
+    </footer>
+
+    <!-- Firebase SDK (v10 Modular) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // CONEXIÓN A FIREBASE REAL
+        const firebaseConfig = {
+            apiKey: "AIzaSyAMAVmKSb8Tygvd3NycZMrBj86GN9h4-j4",
+            authDomain: "registro-personas-c5e48.firebaseapp.com",
+            projectId: "registro-personas-c5e48",
+            storageBucket: "registro-personas-c5e48.firebasestorage.app",
+            messagingSenderId: "129443873783",
+            appId: "1:129443873783:web:9d4575e9ea54ba208e24f2"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const cntEstudiantes = document.getElementById('cntEstudiantes');
+        const cntAsistencias = document.getElementById('cntAsistencias');
+
+        // Escuchar número de estudiantes en vivo
+        onSnapshot(collection(db, "estudiantes"), (snapshot) => {
+            cntEstudiantes.textContent = snapshot.size;
+        }, (err) => {
+            cntEstudiantes.textContent = "0";
+        });
+
+        // Escuchar número de asistencias en vivo
+        onSnapshot(collection(db, "asistencias"), (snapshot) => {
+            cntAsistencias.textContent = snapshot.size;
+        }, (err) => {
+            cntAsistencias.textContent = "0";
+        });
+    </script>
+</body>
+</html>
